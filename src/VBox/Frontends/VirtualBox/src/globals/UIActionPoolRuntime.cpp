@@ -1,4 +1,4 @@
-/* $Id: UIActionPoolRuntime.cpp 111507 2025-10-28 13:08:39Z sergey.dubov@oracle.com $ */
+/* $Id: UIActionPoolRuntime.cpp 111508 2025-10-28 13:11:56Z sergey.dubov@oracle.com $ */
 /** @file
  * VBox Qt GUI - UIActionPoolRuntime class implementation.
  */
@@ -4084,7 +4084,7 @@ void UIActionPoolRuntime::updateMenuViewRemap(QMenu *pMenu)
             if (pAction)
             {
                 /* Configure exclusive 'remap' action: */
-                pAction->setEnabled(fScreenEnabled);
+                pAction->setEnabled(m_fGuestSupportsGraphics && fScreenEnabled);
                 pAction->setProperty("Guest Screen Index", iGuestScreenIndex);
                 pAction->setProperty("Host Screen Index", iHostScreenIndex);
                 pAction->setCheckable(true);
