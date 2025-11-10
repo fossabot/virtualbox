@@ -1,4 +1,4 @@
-/* $Id: VBoxWinDrvInst.cpp 111591 2025-11-10 11:16:29Z andreas.loeffler@oracle.com $ */
+/* $Id: VBoxWinDrvInst.cpp 111592 2025-11-10 11:24:45Z andreas.loeffler@oracle.com $ */
 /** @file
  * VBoxWinDrvInst - Windows driver installation handling.
  */
@@ -2427,8 +2427,10 @@ static int vboxWinDrvUninstallPerform(PVBOXWINDRVINSTINTERNAL pCtx, PVBOXWINDRVI
             rc = vboxWinDrvQueryFromDriverStore(pCtx, pParms, &pList);
             if (RT_SUCCESS(rc))
             {
+#if 0 /* Disabled for now, needs more work first. */
                 rc = vboxWinDrvUninstallFromFs(pCtx, pParms, pList);
                 if (RT_SUCCESS(rc))
+#endif
                     rc = vboxWinDrvUninstallFromDriverStore(pCtx, pParms, pList);
 
                 VBoxWinDrvStoreListFree(pList);
