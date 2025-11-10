@@ -1,4 +1,4 @@
-/* $Id: QITreeView.cpp 111602 2025-11-10 16:21:40Z sergey.dubov@oracle.com $ */
+/* $Id: QITreeView.cpp 111603 2025-11-10 16:25:01Z sergey.dubov@oracle.com $ */
 /** @file
  * VBox Qt GUI - Qt extensions: QITreeView class implementation.
  */
@@ -205,12 +205,29 @@ public:
         QAbstractItemModel *pModel = pTree->model();
         AssertPtrReturn(pModel, QAccessible::State());
 
+        /* Get current index: */
+        const QModelIndex idxCurrent = pTree->currentIndex();
+
+        /* Sanity check: */
+        AssertReturn(idxCurrent.isValid(), QAccessible::State());
+
+        /* Check whether we have proxy model set or source one otherwise: */
+        const QSortFilterProxyModel *pProxyModel = qobject_cast<const QSortFilterProxyModel*>(pModel);
+        /* Acquire source-model child-index (can be the same as original if there is no proxy model): */
+        const QModelIndex idxSourceCurrent = pProxyModel ? pProxyModel->mapToSource(idxCurrent) : idxCurrent;
+
+        /* Get current item: */
+        QITreeViewItem *pCurrentItem = static_cast<QITreeViewItem*>(idxSourceCurrent.internalPointer());
+
+        /* Sanity check: */
+        AssertPtrReturn(pCurrentItem, QAccessible::State());
+
         /* Compose the state: */
         QAccessible::State myState;
         myState.focusable = true;
         myState.selectable = true;
         if (   pTree->hasFocus()
-            && pTree->currentIndex() == pItem->modelIndex())
+            && pCurrentItem == pItem)
         {
             myState.focused = true;
             myState.selected = true;
