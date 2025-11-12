@@ -1,4 +1,4 @@
-/* $Id: detect.cpp 111661 2025-11-12 12:00:49Z knut.osmundsen@oracle.com $ */
+/* $Id: detect.cpp 111666 2025-11-12 12:14:43Z knut.osmundsen@oracle.com $ */
 /** @file
  * IPRT - Compression Detection.
  */
@@ -92,5 +92,4 @@ RTDECL(bool) RTZipXzIsStartOfCompressedStream(uint8_t const *pbStart, size_t cbS
         && pbStart[4] == 0x5a
         && pbStart[5] == 0x00;
 }
-
 
