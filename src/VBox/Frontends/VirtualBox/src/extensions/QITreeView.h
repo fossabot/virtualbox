@@ -1,4 +1,4 @@
-/* $Id: QITreeView.h 111679 2025-11-12 14:17:11Z sergey.dubov@oracle.com $ */
+/* $Id: QITreeView.h 111680 2025-11-12 14:20:07Z sergey.dubov@oracle.com $ */
 /** @file
  * VBox Qt GUI - Qt extensions: QITreeView class declaration.
  */
@@ -173,11 +173,6 @@ protected:
     virtual void dragLeaveEvent(QDragLeaveEvent *pEvent) RT_OVERRIDE;
     /** Handles mouse drop @a pEvent. */
     virtual void dropEvent(QDropEvent *pEvent) RT_OVERRIDE;
-
-private:
-
-    /** Prepares all. */
-    void prepare();
 };
 
 

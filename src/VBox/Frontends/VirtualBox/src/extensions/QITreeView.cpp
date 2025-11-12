@@ -1,4 +1,4 @@
-/* $Id: QITreeView.cpp 111679 2025-11-12 14:17:11Z sergey.dubov@oracle.com $ */
+/* $Id: QITreeView.cpp 111680 2025-11-12 14:20:07Z sergey.dubov@oracle.com $ */
 /** @file
  * VBox Qt GUI - Qt extensions: QITreeView class implementation.
  */
@@ -595,8 +595,15 @@ QModelIndex QITreeViewItem::modelIndex() const
 QITreeView::QITreeView(QWidget *pParent)
     : QTreeView(pParent)
 {
-    /* Prepare all: */
-    prepare();
+    /* Install QITreeViewItem accessibility interface factory: */
+    QAccessible::installFactory(QIAccessibilityInterfaceForQITreeViewItem::pFactory);
+    /* Install QITreeView accessibility interface factory: */
+    QAccessible::installFactory(QIAccessibilityInterfaceForQITreeView::pFactory);
+
+    /* Mark header hidden: */
+    setHeaderHidden(true);
+    /* Mark root hidden: */
+    setRootIsDecorated(false);
 }
 
 QITreeViewItem *QITreeView::currentItem() const
@@ -720,17 +727,4 @@ void QITreeView::dropEvent(QDropEvent *pEvent)
     /* Call to base-class only if event was not yet accepted: */
     if (!pEvent->isAccepted())
         QTreeView::dropEvent(pEvent);
-}
-
-void QITreeView::prepare()
-{
-    /* Install QITreeViewItem accessibility interface factory: */
-    QAccessible::installFactory(QIAccessibilityInterfaceForQITreeViewItem::pFactory);
-    /* Install QITreeView accessibility interface factory: */
-    QAccessible::installFactory(QIAccessibilityInterfaceForQITreeView::pFactory);
-
-    /* Mark header hidden: */
-    setHeaderHidden(true);
-    /* Mark root hidden: */
-    setRootIsDecorated(false);
 }
