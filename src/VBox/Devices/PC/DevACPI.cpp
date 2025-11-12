@@ -1,4 +1,4 @@
-/* $Id: DevACPI.cpp 111115 2025-09-25 15:01:08Z alexander.eichner@oracle.com $ */
+/* $Id: DevACPI.cpp 111659 2025-11-12 11:49:42Z alexander.eichner@oracle.com $ */
 /** @file
  * DevACPI - Advanced Configuration and Power Interface (ACPI) Device.
  */
@@ -4355,7 +4355,8 @@ static DECLCALLBACK(int) acpiR3Construct(PPDMDEVINS pDevIns, int iInstance, PCFG
                                   "|PowerS1Enabled"
                                   "|PowerS4Enabled"
                                   "|CpuHotPlug"
-                                  "|AmlFilePath"
+                                  "|DsdtFilePath"
+                                  "|SsdtFilePath"
                                   "|Serial0IoPortBase"
                                   "|Serial1IoPortBase"
                                   "|Serial2IoPortBase"
