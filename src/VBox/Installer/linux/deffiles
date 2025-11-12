@@ -1,5 +1,5 @@
 #!/bin/sh
-# $Id: deffiles 110684 2025-08-11 17:18:47Z klaus.espenlaub@oracle.com $
+# $Id: deffiles 111644 2025-11-12 09:06:45Z alexander.eichner@oracle.com $
 ## @file
 # Oracle VirtualBox - linux default files list.
 #
@@ -51,6 +51,7 @@ DEFAULT_FILE_NAMES=" \
     VBoxDDU.so \
     VBoxVMM.so \
     VBoxVMMArm.so \
+    VBoxVRDP.so \
     VBoxXPCOM.so \
     VBoxXPCOMC.so \
     VBoxXPCOMIPCD \
