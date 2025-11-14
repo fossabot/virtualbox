@@ -1,4 +1,4 @@
-/* $Id: PGMAll.cpp 111140 2025-09-27 02:29:54Z knut.osmundsen@oracle.com $ */
+/* $Id: PGMAll.cpp 111740 2025-11-14 13:56:38Z knut.osmundsen@oracle.com $ */
 /** @file
  * PGM - Page Manager and Monitor - All context code.
  */
@@ -1457,7 +1457,6 @@ int pgmShwSyncPaePDPtr(PVMCPUCC pVCpu, RTGCPTR GCPtr, X86PGPAEUINT uGstPdpe, PX8
         /* Hook it up. */
         ASMAtomicWriteU64(&pPdpe->u, pShwPage->Core.Key | (uGstPdpe & (X86_PDPE_P | X86_PDPE_A)) | (uPdpe & PGM_PDPT_FLAGS));
     }
-    PGM_DYNMAP_UNUSED_HINT(pVCpu, pPdpe);
 
     *ppPD = (PX86PDPAE)PGMPOOL_PAGE_2_PTR_V2(pVM, pVCpu, pShwPage);
     return VINF_SUCCESS;
