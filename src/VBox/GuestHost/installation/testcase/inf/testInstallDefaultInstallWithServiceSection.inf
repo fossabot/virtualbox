@@ -1,4 +1,4 @@
-; $Id: testInstallDefaultInstallWithServiceSection.inf 111676 2025-11-12 13:48:56Z andreas.loeffler@oracle.com $
+; $Id: testInstallDefaultInstallWithServiceSection.inf 111769 2025-11-17 18:45:58Z andreas.loeffler@oracle.com $
 ;; @file
 ; VirtualBox Windows Driver Installation - Test INF file.
 ;
@@ -37,7 +37,7 @@ DriverPackageType=PlugAndPlay
 [DefaultInstall]
 %ORACLE%=VBoxTest,NtAmd64
 
-[DefaultInstall.NTARM64.Services]
+[DefaultInstall.NTAMD64.Services]
 AddService=VBoxTest,0x00000002,VBoxTest_Service
 
 [VBoxTest_Service]

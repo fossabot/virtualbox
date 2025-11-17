@@ -1,4 +1,4 @@
-/* $Id: tstVBoxWinDrvInstInf.cpp 111676 2025-11-12 13:48:56Z andreas.loeffler@oracle.com $ */
+/* $Id: tstVBoxWinDrvInstInf.cpp 111769 2025-11-17 18:45:58Z andreas.loeffler@oracle.com $ */
 /** @file
  * VirtualBox Windows driver installation tests.
  */
@@ -118,7 +118,7 @@ VBOXWINDRVINSTTEST g_aTests[] =
     { "testInstallDefaultInstallWithServiceSection.inf", VBOX_WIN_DRIVERINSTALL_F_NONE, VINF_SUCCESS },
     /** Manufacturer, model and section given. */
     { "testInstallManufacturerWithModelSection.inf", VBOX_WIN_DRIVERINSTALL_F_NONE,
-      VINF_SUCCESS, { L"VBoxTest.NTAMD64" /* Model */, L"PCI\\VEN_80ee&DEV_cafe" /* PnP ID */,  L"VBoxTest.NTAMD64" /* Section */ } }
+      VINF_SUCCESS, { L"VBoxTest.NTAMD64" /* Model */, L"PCI\\VEN_80ee&DEV_cafe" /* PnP ID */,  L"VBoxTest" /* Section */ } }
 };
 /** Pointer to test definitions. */
 typedef VBOXWINDRVINSTTEST *PVBOXWINDRVINSTTEST;
