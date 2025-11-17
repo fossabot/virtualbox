@@ -1,4 +1,4 @@
-/* $Id: APICR3Nem-win-x86.cpp 111699 2025-11-13 13:47:40Z knut.osmundsen@oracle.com $ */
+/* $Id: APICR3Nem-win-x86.cpp 111754 2025-11-17 12:12:02Z ramshankar.venkataraman@oracle.com $ */
 /** @file
  * APIC - Advanced Programmable Interrupt Controller - NEM Hyper-V backend.
  */
@@ -122,7 +122,7 @@ static CPUMMSRRANGE const g_MsrRange_x2Apic_Invalid = X2APIC_MSRRANGE_INVALID(MS
  */
 #define VMM_APIC_TEMPLATE_ALL_COMMON
 #define VMM_APIC_TEMPLATE_R3_COMMON
-#include "../VMMAll/APICAllCommon.cpp.h"
+#include "../VMMAll/target-x86/APICAllCommon-x86.cpp.h"
 #undef VMM_APIC_TEMPLATE_ALL_COMMON
 #undef VMM_APIC_TEMPLATE_R3_COMMON
 
