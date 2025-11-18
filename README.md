@@ -1,4 +1,6 @@
 # Oracle VirtualBox
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFlo-fro%2Fvirtualbox.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FFlo-fro%2Fvirtualbox?ref=badge_shield)
+
 
 VirtualBox is a general-purpose full virtualization software for x86_64
 hardware (with version 7.1 additionally for macOS/Arm), targeted at laptop,
@@ -89,3 +91,6 @@ Released under the GNU General Public License v3.0 as shown at
 for other code using parts of the project which are covered by multiple
 licenses.
 
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFlo-fro%2Fvirtualbox.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FFlo-fro%2Fvirtualbox?ref=badge_large)
